@@ -255,6 +255,36 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
 .fl strong{color:var(--w)}
 .fr{font-size:.66rem;color:var(--mute)}
 
+
+/* ── WORD CYCLE ANIMATION ── */
+.word-cycle-wrap{
+  display:inline-block;
+  position:relative;
+  min-width:320px;
+  height:1.15em;
+  vertical-align:bottom;
+  overflow:hidden;
+}
+.word-cycle{
+  display:inline-block;
+  color:var(--w);
+  animation:none;
+  position:relative;
+}
+.word-slide-in{
+  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
+}
+.word-slide-out{
+  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
+}
+@keyframes slideIn{
+  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
+  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
+}
+@keyframes slideOut{
+  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
+  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
+}
 .rare-box{display:flex;align-items:flex-start;gap:.9rem;margin:2rem auto 0;max-width:720px;background:rgba(30,217,160,.06);border:1px solid rgba(30,217,160,.18);border-radius:14px;padding:1.2rem 1.6rem;text-align:left;animation:fup .8s .38s ease both}
 .rare-icon{font-size:1.4rem;flex-shrink:0;margin-top:.05rem}
 .rare-text{font-size:.86rem;line-height:1.82;color:var(--soft)}
@@ -267,7 +297,37 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
   .co-hd{flex-direction:column}
   .mgmt-pts{grid-template-columns:1fr}
   .pmb{padding:2rem 1.5rem}
-  .rare-box{flex-direction:column;gap:.6rem}
+  
+/* ── WORD CYCLE ANIMATION ── */
+.word-cycle-wrap{
+  display:inline-block;
+  position:relative;
+  min-width:320px;
+  height:1.15em;
+  vertical-align:bottom;
+  overflow:hidden;
+}
+.word-cycle{
+  display:inline-block;
+  color:var(--w);
+  animation:none;
+  position:relative;
+}
+.word-slide-in{
+  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
+}
+.word-slide-out{
+  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
+}
+@keyframes slideIn{
+  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
+  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
+}
+@keyframes slideOut{
+  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
+  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
+}
+.rare-box{flex-direction:column;gap:.6rem}
 }
 @media(max-width:600px){
   #hero{padding:7rem 5% 4rem}
@@ -276,7 +336,37 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
   .dfeats{grid-template-columns:1fr}
   .hbtns{flex-direction:column;align-items:center}
   .bta,.btb{width:100%;text-align:center}
-  .rare-box{text-align:center}
+  
+/* ── WORD CYCLE ANIMATION ── */
+.word-cycle-wrap{
+  display:inline-block;
+  position:relative;
+  min-width:320px;
+  height:1.15em;
+  vertical-align:bottom;
+  overflow:hidden;
+}
+.word-cycle{
+  display:inline-block;
+  color:var(--w);
+  animation:none;
+  position:relative;
+}
+.word-slide-in{
+  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
+}
+.word-slide-out{
+  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
+}
+@keyframes slideIn{
+  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
+  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
+}
+@keyframes slideOut{
+  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
+  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
+}
+.rare-box{text-align:center}
   .mgmt-card,.eng-card{padding:1.5rem 1.2rem}
   .co{margin-bottom:3rem;padding-bottom:3rem}
   .sc{grid-template-columns:1fr !important}
@@ -313,10 +403,9 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
   <div class="hg"></div>
   <div class="hi">
     <div class="hchip"><div class="cd"></div>TPM · Product Manager · Product Owner</div>
-    <h1 class="hh">
-      I Plan. I Build.<br>
-      <span class="ga">I Know Both Sides</span>
-      <span class="gb">Of the Table.</span>
+    <h1 class="hh" style="line-height:1.2">
+      I&nbsp;<span class="word-cycle-wrap"><span class="word-cycle" id="wc"></span></span><br>
+      <span class="ga" style="font-size:clamp(1.1rem,3vw,2rem);font-weight:500;letter-spacing:.01em;background:linear-gradient(135deg,#F5A623,#FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">The PM who can build what he plans.</span>
     </h1>
     <p class="hs">
       I've been practising PM for <strong>7 years without the title</strong> —
@@ -831,6 +920,43 @@ document.querySelectorAll('.pc,.sk,.mp').forEach(card=>{
   });
   card.addEventListener('mouseleave',()=>{card.style.transform='';card.style.transition=''});
 });
+
+/* WORD CYCLE */
+(function(){
+  const words = [
+    {text:'Plan.',     color:'#F5A623'},
+    {text:'Build.',    color:'#FFD166'},
+    {text:'Ship.',     color:'#1ED9A0'},
+    {text:'Lead.',     color:'#a78bfa'},
+    {text:'Deliver.',  color:'#FF6B35'},
+  ];
+  let idx = 0;
+  const el = document.getElementById('wc');
+  if(!el) return;
+
+  function show(i){
+    el.textContent = words[i].text;
+    el.style.color = words[i].color;
+    el.style.textShadow = `0 0 40px ${words[i].color}55`;
+    el.classList.remove('word-slide-out');
+    void el.offsetWidth;
+    el.classList.add('word-slide-in');
+  }
+
+  function next(){
+    el.classList.remove('word-slide-in');
+    void el.offsetWidth;
+    el.classList.add('word-slide-out');
+    setTimeout(()=>{
+      idx = (idx+1) % words.length;
+      show(idx);
+    }, 460);
+  }
+
+  show(0);
+  setInterval(next, 1800);
+})();
+
 </script>
 </body>
 </html>
