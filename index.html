@@ -1,407 +1,537 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Riyaz · Product Manager · TPM · Founder</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --bg:#05070E;--bg2:#090C18;--bg3:#0E1222;--card:#111828;
-  --ink:#E0E8F8;--soft:#7A8AAA;--mute:#4A5572;--line:rgba(255,255,255,.06);
-  --a:#F5A623;--g:#FFD166;--e:#FF6B35;--teal:#1ED9A0;--w:#fff;
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+@charset "utf-8";
+
+:root { --bg: #05070E; --bg2: #090C18; --bg3: #0E1222; --card: #111828; --ink: #E0E8F8; --soft: #7A8AAA; --mute: #4A5572; --line: rgba(255,255,255,.06); --a: #F5A623; --g: #FFD166; --e: #FF6B35; --teal: #1ED9A0; --w: #fff; }
+
+*, ::before, ::after { box-sizing: border-box; margin: 0px; padding: 0px; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body { font-family: Inter, sans-serif; background: var(--bg); color: var(--ink); overflow-x: hidden; }
+
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 3px; }
+
+::-webkit-scrollbar-track { background: var(--bg); }
+
+::-webkit-scrollbar-thumb { background: var(--a); border-radius: 2px; }
+
+#nav { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 1rem 5%; background: rgba(5, 7, 14, 0.72); backdrop-filter: blur(28px); border-bottom: 1px solid var(--line); transition: padding 0.3s; }
+
+#nav.sh { padding: 0.6rem 5%; }
+
+.logo { font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--w); display: flex; align-items: center; gap: 0.55rem; }
+
+.lp { width: 8px; height: 8px; border-radius: 50%; background: var(--a); animation: 2s ease 0s infinite normal none running sol; }
+
+@keyframes sol { 
+  0%, 100% { box-shadow: rgba(245, 166, 35, 0.55) 0px 0px 0px 0px; }
+  70% { box-shadow: rgba(245, 166, 35, 0) 0px 0px 0px 9px; }
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--a);border-radius:2px}
 
-/* ── NAV ── */
-#nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:1rem 5%;background:rgba(5,7,14,.72);backdrop-filter:blur(28px);border-bottom:1px solid var(--line);transition:padding .3s}
-#nav.sh{padding:.6rem 5%}
-.logo{font-family:'DM Sans',sans-serif;font-weight:800;font-size:1.1rem;color:var(--w);display:flex;align-items:center;gap:.55rem}
-.lp{width:8px;height:8px;border-radius:50%;background:var(--a);animation:sol 2s infinite}
-@keyframes sol{0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.55)}70%{box-shadow:0 0 0 9px rgba(245,166,35,0)}}
-.nl{display:flex;gap:2rem;list-style:none}
-.nl a{font-size:.73rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);transition:color .2s}
-.nl a:hover{color:var(--w)}
-.nb{padding:.55rem 1.4rem;border-radius:7px;background:linear-gradient(135deg,var(--a),var(--e));font-size:.74rem;font-weight:700;color:#fff;box-shadow:0 0 22px rgba(245,166,35,.28);transition:.2s}
-.nb:hover{transform:translateY(-1px);box-shadow:0 0 38px rgba(245,166,35,.48)}
+.nl { display: flex; gap: 2rem; list-style: none; }
 
-/* ── 3D SCROLL ENGINE ── */
-.s3{
-  opacity:0;
-  transform:perspective(900px) translateY(55px) rotateX(9deg);
-  transform-style:preserve-3d;
-  transition:opacity .9s ease, transform .9s cubic-bezier(.19,1,.38,1);
-  will-change:transform,opacity;
+.nl a { font-size: 0.73rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--mute); transition: color 0.2s; }
+
+.nl a:hover { color: var(--w); }
+
+.nb { padding: 0.55rem 1.4rem; border-radius: 7px; background: linear-gradient(135deg,var(--a),var(--e)); font-size: 0.74rem; font-weight: 700; color: rgb(255, 255, 255); box-shadow: rgba(245, 166, 35, 0.28) 0px 0px 22px; transition: 0.2s; }
+
+.nb:hover { transform: translateY(-1px); box-shadow: rgba(245, 166, 35, 0.48) 0px 0px 38px; }
+
+.s3 { opacity: 0; transform: perspective(900px) translateY(55px) rotateX(9deg); transform-style: preserve-3d; transition: opacity 0.9s, transform 0.9s cubic-bezier(0.19, 1, 0.38, 1); will-change: transform, opacity; }
+
+.s3.on { opacity: 1; transform: perspective(900px) translateY(0px) rotateX(0deg); }
+
+.sl { opacity: 0; transform: perspective(800px) translateX(-65px) rotateY(8deg); transition: opacity 0.85s, transform 0.85s cubic-bezier(0.19, 1, 0.38, 1); }
+
+.sl.on { opacity: 1; transform: perspective(800px) translateX(0px) rotateY(0deg); }
+
+.sr { opacity: 0; transform: perspective(800px) translateX(65px) rotateY(-8deg); transition: opacity 0.85s, transform 0.85s cubic-bezier(0.19, 1, 0.38, 1); }
+
+.sr.on { opacity: 1; transform: perspective(800px) translateX(0px) rotateY(0deg); }
+
+.sc { opacity: 0; transform: perspective(900px) scale(0.92) rotateX(5deg); transition: opacity 0.85s, transform 0.85s cubic-bezier(0.19, 1, 0.38, 1); }
+
+.sc.on { opacity: 1; transform: perspective(900px) scale(1) rotateX(0deg); }
+
+.d1 { transition-delay: 0.07s; }
+
+.d2 { transition-delay: 0.15s; }
+
+.d3 { transition-delay: 0.23s; }
+
+.d4 { transition-delay: 0.31s; }
+
+.d5 { transition-delay: 0.39s; }
+
+.d6 { transition-delay: 0.47s; }
+
+#hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 9rem 5% 6rem; text-align: center; }
+
+canvas#cvs { position: absolute; inset: 0px; pointer-events: none; }
+
+.orb { position: absolute; border-radius: 50%; filter: blur(140px); pointer-events: none; }
+
+.o1 { width: 700px; height: 700px; background: rgba(245, 166, 35, 0.09); top: -130px; left: -200px; animation: 14s ease-in-out 0s infinite normal none running df; }
+
+.o2 { width: 500px; height: 500px; background: rgba(255, 107, 53, 0.07); bottom: -100px; right: -100px; animation: 17s ease-in-out 0s infinite reverse none running df; }
+
+.o3 { width: 330px; height: 330px; background: rgba(30, 217, 160, 0.05); top: 40%; left: 55%; animation: 11s ease-in-out 4s infinite normal none running df; }
+
+@keyframes df { 
+  0%, 100% { transform: translate(0px, 0px); }
+  40% { transform: translate(28px, -22px); }
+  70% { transform: translate(-18px, 25px); }
 }
-.s3.on{opacity:1;transform:perspective(900px) translateY(0) rotateX(0)}
 
-.sl{opacity:0;transform:perspective(800px) translateX(-65px) rotateY(8deg);transition:opacity .85s ease,transform .85s cubic-bezier(.19,1,.38,1)}
-.sl.on{opacity:1;transform:perspective(800px) translateX(0) rotateY(0)}
+.hg { position: absolute; inset: 0px; pointer-events: none; background-image: linear-gradient(rgba(245, 166, 35, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 166, 35, 0.03) 1px, transparent 1px); background-size: 76px 76px; mask-image: radial-gradient(68% 68%, black 15%, transparent 100%); }
 
-.sr{opacity:0;transform:perspective(800px) translateX(65px) rotateY(-8deg);transition:opacity .85s ease,transform .85s cubic-bezier(.19,1,.38,1)}
-.sr.on{opacity:1;transform:perspective(800px) translateX(0) rotateY(0)}
+.hi { position: relative; z-index: 2; max-width: 960px; margin: 0px auto; }
 
-.sc{opacity:0;transform:perspective(900px) scale(.92) rotateX(5deg);transition:opacity .85s ease,transform .85s cubic-bezier(.19,1,.38,1)}
-.sc.on{opacity:1;transform:perspective(900px) scale(1) rotateX(0)}
+.hchip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.22); border-radius: 100px; padding: 0.4rem 1.1rem; font-family: "JetBrains Mono", monospace; font-size: 0.68rem; color: rgba(245, 166, 35, 0.9); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; animation: 0.8s ease 0s 1 normal both running fup; }
 
-.d1{transition-delay:.07s}.d2{transition-delay:.15s}.d3{transition-delay:.23s}
-.d4{transition-delay:.31s}.d5{transition-delay:.39s}.d6{transition-delay:.47s}
+.cd { width: 5px; height: 5px; border-radius: 50%; background: var(--a); animation: 1.8s ease 0s infinite normal none running sol; }
 
-/* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:9rem 5% 6rem;text-align:center}
-canvas#cvs{position:absolute;inset:0;pointer-events:none}
-.orb{position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none}
-.o1{width:700px;height:700px;background:rgba(245,166,35,.09);top:-130px;left:-200px;animation:df 14s ease-in-out infinite}
-.o2{width:500px;height:500px;background:rgba(255,107,53,.07);bottom:-100px;right:-100px;animation:df 17s ease-in-out infinite reverse}
-.o3{width:330px;height:330px;background:rgba(30,217,160,.05);top:40%;left:55%;animation:df 11s ease-in-out infinite 4s}
-@keyframes df{0%,100%{transform:translate(0,0)}40%{transform:translate(28px,-22px)}70%{transform:translate(-18px,25px)}}
-.hg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(245,166,35,.033) 1px,transparent 1px),linear-gradient(90deg,rgba(245,166,35,.033) 1px,transparent 1px);background-size:76px 76px;mask-image:radial-gradient(ellipse 68% 68% at 50% 50%,black 15%,transparent 100%)}
-
-.hi{position:relative;z-index:2;max-width:960px;margin:0 auto}
-.hchip{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.22);border-radius:100px;padding:.4rem 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:rgba(245,166,35,.9);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2rem;animation:fup .8s ease both}
-.cd{width:5px;height:5px;border-radius:50%;background:var(--a);animation:sol 1.8s infinite}
-@keyframes fup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
-.hh{font-family:'DM Sans',sans-serif;font-size:clamp(1.9rem,4.5vw,3.8rem);font-weight:800;line-height:1.02;letter-spacing:-.005em;color:var(--w);animation:fup .8s .15s ease both}
-.ga{background:linear-gradient(135deg,#F5A623,#FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
-.gb{color:var(--teal);display:block}
-
-.hs{margin:1.9rem auto 0;font-size:1.02rem;font-weight:300;line-height:2;color:var(--soft);max-width:700px;animation:fup .8s .3s ease both}
-.hs strong{color:var(--ink);font-weight:500}
-.hs em{font-style:normal;color:var(--a);font-weight:500}
-
-.hbtns{margin-top:2.6rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fup .8s .45s ease both}
-.bta{padding:.92rem 2.3rem;border-radius:8px;background:linear-gradient(135deg,var(--a),var(--e));color:#fff;font-weight:700;font-size:.88rem;box-shadow:0 0 38px rgba(245,166,35,.32);transition:.25s}
-.bta:hover{transform:translateY(-3px);box-shadow:0 0 60px rgba(245,166,35,.52)}
-.btb{padding:.92rem 2.3rem;border-radius:8px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.03);color:var(--ink);font-weight:500;font-size:.88rem;transition:.2s}
-.btb:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
-
-.srow{display:flex;gap:0;max-width:840px;margin:4rem auto 0;background:rgba(255,255,255,.024);border:1px solid var(--line);border-radius:16px;overflow:hidden;animation:fup .8s .6s ease both}
-.st{flex:1;padding:1.5rem 1rem;text-align:center;border-right:1px solid var(--line)}
-.st:last-child{border-right:none}
-.stn{font-family:'DM Sans',sans-serif;font-size:1.85rem;font-weight:800;color:var(--w);display:block;line-height:1}
-.stn em{color:var(--a);font-style:normal}
-.stl{font-size:.62rem;color:var(--mute);text-transform:uppercase;letter-spacing:.09em;display:block;margin-top:.35rem}
-
-/* ── MARQUEE ── */
-.belt{padding:1.2rem 0;overflow:hidden;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.bt{display:flex;gap:3rem;width:max-content;animation:mq 30s linear infinite}
-@keyframes mq{to{transform:translateX(-50%)}}
-.mi{font-size:.72rem;font-weight:700;color:var(--mute);letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
-.mi strong{color:var(--w)}
-.ms{color:var(--a);font-size:.5rem}
-
-/* ── SECTION BASE ── */
-.sec{padding:8rem 5%}
-.wrap{max-width:1180px;margin:0 auto}
-.eye{display:flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--a);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.65rem}
-.eye::before{content:'';width:20px;height:1px;background:var(--a)}
-.sh2{font-family:'DM Sans',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:700;letter-spacing:-.01em;color:var(--w);line-height:1.1;margin-bottom:1rem}
-.sp{font-size:.9rem;line-height:1.9;color:var(--soft);max-width:580px;margin-bottom:3.5rem}
-
-/* ── PM TRUTH BANNER ── */
-.pmb{background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(255,107,53,.04));border:1px solid rgba(245,166,35,.18);border-radius:20px;padding:3rem 3.5rem;margin-bottom:5rem;position:relative;overflow:hidden}
-.pmb::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,.12),transparent 65%);pointer-events:none}
-.pmb-eye{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--a);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.7rem}
-.pmb-h{font-family:'DM Sans',sans-serif;font-size:clamp(1.2rem,2vw,1.6rem);font-weight:800;color:var(--w);line-height:1.2;margin-bottom:1rem;letter-spacing:-.008em}
-.pmb-h em{font-style:normal;color:var(--a)}
-.pmb-p{font-size:.88rem;line-height:1.92;color:var(--soft);max-width:840px}
-.pmb-p strong{color:var(--ink)}
-
-/* ── COMPANY BLOCKS ── */
-.co{margin-bottom:5.5rem;padding-bottom:5.5rem;border-bottom:1px solid var(--line)}
-.co:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.co-hd{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
-.con{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.4rem;color:var(--w);letter-spacing:-.008em;margin-bottom:.3rem}
-.cor{font-size:.88rem;color:var(--a);font-weight:600;margin-bottom:.35rem}
-.cop{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--mute);letter-spacing:.07em;text-transform:uppercase}
-.cobg{display:inline-flex;align-items:center;padding:.42rem 1.05rem;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
-.cb0{background:rgba(30,217,160,.1);border:1px solid rgba(30,217,160,.25);color:var(--teal)}
-.cb1{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);color:var(--a)}
-.cb2{background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.22);color:var(--g)}
-.cb3{background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.25);color:var(--e)}
-
-/* MANAGEMENT FIRST — full width card */
-.mgmt-card{background:linear-gradient(135deg,rgba(30,217,160,.05),rgba(245,166,35,.03));border:1px solid rgba(30,217,160,.2);border-radius:16px;padding:2rem 2.2rem;margin-bottom:1.1rem;position:relative;overflow:hidden}
-.mgmt-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--teal),var(--a))}
-.mc-hd{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
-.mc-ico{width:32px;height:32px;border-radius:8px;background:rgba(30,217,160,.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.mc-title{font-family:'DM Sans',sans-serif;font-weight:800;font-size:.92rem;color:var(--w);text-transform:uppercase;letter-spacing:.05em}
-.mc-sub{font-size:.72rem;color:var(--teal);margin-top:.1rem;letter-spacing:.04em}
-.mgmt-pts{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-.mp{display:flex;align-items:flex-start;gap:.65rem;background:rgba(255,255,255,.03);border:1px solid rgba(30,217,160,.1);border-radius:10px;padding:.85rem 1rem}
-.mp-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);margin-top:.42rem;flex-shrink:0}
-.mp-txt{font-size:.8rem;line-height:1.7;color:var(--soft)}
-.mp-txt strong{color:var(--ink);display:block;font-size:.82rem;margin-bottom:.1rem}
-.mtags{display:flex;flex-wrap:wrap;gap:.42rem;margin-top:1.2rem}
-.mt{font-size:.66rem;padding:.28rem .72rem;border-radius:100px;background:rgba(30,217,160,.08);border:1px solid rgba(30,217,160,.2);color:rgba(30,217,160,.88);font-weight:500}
-
-/* ENGINEERING — below management */
-.eng-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:2rem 2.2rem;position:relative;overflow:hidden}
-.eng-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--a),var(--e))}
-.ec-hd{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
-.ec-ico{width:32px;height:32px;border-radius:8px;background:rgba(245,166,35,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.ec-title{font-family:'DM Sans',sans-serif;font-weight:800;font-size:.92rem;color:var(--w);text-transform:uppercase;letter-spacing:.05em}
-.ec-sub{font-size:.72rem;color:var(--a);margin-top:.1rem;letter-spacing:.04em}
-.eng-pts{display:flex;flex-direction:column;gap:.5rem}
-.ep{display:flex;align-items:flex-start;gap:.6rem;font-size:.8rem;line-height:1.7;color:var(--soft)}
-.ep::before{content:'→';color:var(--a);font-size:.75rem;margin-top:.2rem;flex-shrink:0}
-
-/* project cards */
-.proj-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:1.1rem;margin-top:1.5rem}
-.pc{background:var(--bg3);border:1px solid var(--line);border-radius:13px;overflow:hidden;transition:.35s ease;transform-style:preserve-3d;cursor:default}
-.pc:hover{border-color:rgba(245,166,35,.28);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px rgba(245,166,35,.08)}
-.pct{padding:1.5rem 1.5rem 1.1rem}
-.pty{display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .65rem;border-radius:100px;margin-bottom:.85rem}
-.pa{background:rgba(30,217,160,.08);border:1px solid rgba(30,217,160,.2);color:var(--teal)}
-.pw{background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.2);color:var(--a)}
-.pe{background:rgba(255,107,53,.08);border:1px solid rgba(255,107,53,.2);color:var(--e)}
-.pn{font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--w);margin-bottom:.45rem}
-.pd{font-size:.78rem;line-height:1.72;color:var(--soft)}
-.pf{padding:.8rem 1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.35rem}
-.pk{font-size:.61rem;padding:.18rem .5rem;border-radius:3px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--mute)}
-
-/* ── DOCIAN ── */
-#docian{background:var(--bg2);position:relative;overflow:hidden}
-#docian::before{content:'';position:absolute;top:-180px;right:-150px;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(30,217,160,.07),transparent 65%);pointer-events:none}
-.dg{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
-.dlive{display:inline-flex;align-items:center;gap:.5rem;background:rgba(30,217,160,.08);border:1px solid rgba(30,217,160,.2);border-radius:100px;padding:.35rem .9rem;font-size:.67rem;font-weight:700;color:var(--teal);letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.1rem}
-.ld{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:sol 1.6s infinite}
-.dt{font-family:'DM Sans',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:800;letter-spacing:-.01em;color:var(--w);line-height:1.1;margin-bottom:.5rem}
-.dt em{font-style:normal;color:var(--a)}
-.dreg{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--mute);margin-bottom:1rem}
-.dtag{font-size:.9rem;font-weight:500;color:var(--teal);margin-bottom:1.2rem;line-height:1.5}
-.dp{font-size:.87rem;line-height:1.92;color:var(--soft);margin-bottom:1.8rem}
-.dp strong{color:var(--ink)}
-.dfeats{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:2rem}
-.df{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;display:flex;align-items:flex-start;gap:.65rem;transition:.2s}
-.df:hover{border-color:rgba(245,166,35,.22);background:rgba(245,166,35,.04)}
-.dfi{font-size:1.1rem;flex-shrink:0;margin-top:.05rem}
-.dft{font-size:.74rem;line-height:1.6;color:var(--soft)}
-.dft strong{color:var(--ink);display:block;font-size:.77rem;margin-bottom:.15rem}
-.srow2{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.8rem}
-.sp2{display:flex;align-items:center;gap:.5rem;padding:.58rem 1.05rem;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);font-size:.77rem;font-weight:500;color:var(--ink);transition:.2s}
-.sp2:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.22)}
-.sp2.site{background:rgba(245,166,35,.08);border-color:rgba(245,166,35,.25);color:var(--a)}
-.sp2.site:hover{background:rgba(245,166,35,.15)}
-.pills{display:flex;flex-wrap:wrap;gap:.38rem}
-.pill{font-family:'JetBrains Mono',monospace;font-size:.62rem;padding:.23rem .58rem;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--mute)}
-/* phone */
-.pw2{display:flex;justify-content:center;position:relative}
-.ph{width:265px;background:linear-gradient(158deg,#111928,#0B1018);border-radius:38px;border:2px solid rgba(255,255,255,.08);box-shadow:0 55px 120px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.07);overflow:hidden;transform:rotateY(-8deg) rotateX(3deg);transition:transform .5s ease}
-.ph:hover{transform:rotateY(0) rotateX(0)}
-.phn{width:68px;height:5px;background:rgba(255,255,255,.06);border-radius:3px;margin:13px auto 0}
-.phs{padding:1rem .9rem 1.5rem}
-.phtb{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem;padding-bottom:.55rem;border-bottom:1px solid rgba(255,255,255,.05)}
-.phnm{font-family:'DM Sans',sans-serif;font-weight:800;font-size:.88rem;color:var(--w)}
-.phnm span{color:var(--a)}
-.phbd{font-size:.54rem;font-weight:700;color:var(--a);background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.22);padding:.14rem .4rem;border-radius:100px;letter-spacing:.06em}
-.bub{border-radius:11px;padding:.58rem .78rem;font-size:.7rem;line-height:1.55;margin-bottom:.42rem}
-.bu{background:linear-gradient(135deg,#B5721A,#8B4F00);color:#fff;margin-left:1.6rem;border-bottom-right-radius:2px}
-.ba{background:rgba(255,255,255,.05);color:var(--ink);margin-right:.75rem;border-bottom-left-radius:2px}
-.bal{font-size:.54rem;color:var(--a);font-weight:700;letter-spacing:.07em;display:block;margin-bottom:.2rem}
-.phf{margin-top:.85rem;display:flex;flex-direction:column;gap:.28rem}
-.pfi{display:flex;align-items:center;gap:.45rem;font-size:.64rem;color:var(--mute);padding:.32rem .45rem;border-radius:7px;background:rgba(255,255,255,.025)}
-.pfd{width:4px;height:4px;border-radius:50%;background:var(--a);flex-shrink:0}
-.fc{position:absolute;right:-52px;top:105px;width:148px;background:rgba(10,14,26,.92);border:1px solid rgba(245,166,35,.2);border-radius:12px;padding:.8rem .95rem;backdrop-filter:blur(16px);box-shadow:0 18px 45px rgba(0,0,0,.5);animation:bob 4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.fcl{font-size:.56rem;color:var(--mute);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.22rem}
-.fcv{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:800;color:var(--a)}
-.fcs{font-size:.56rem;color:var(--mute);margin-top:.12rem}
-
-/* ── SKILLS ── */
-.sk-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-.sk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.8rem;position:relative;overflow:hidden;transition:.3s;transform-style:preserve-3d}
-.sk:hover{transform:translateY(-4px) rotateX(2deg);border-color:rgba(245,166,35,.22);box-shadow:0 18px 50px rgba(0,0,0,.35)}
-.sk::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--e))}
-.ski{font-size:1.45rem;margin-bottom:.85rem}
-.skt{font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--w);margin-bottom:.88rem}
-.skl{display:flex;flex-direction:column;gap:.42rem}
-.skli{display:flex;align-items:flex-start;gap:.55rem;font-size:.78rem;color:var(--soft);line-height:1.55}
-.skli::before{content:'—';color:var(--a);font-size:.6rem;margin-top:.22rem;flex-shrink:0}
-
-/* ── DIFF CALLOUT ── */
-.diff{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;background:linear-gradient(135deg,rgba(245,166,35,.06),rgba(255,107,53,.04));border:1px solid rgba(245,166,35,.14);border-radius:20px;padding:3rem;margin-top:3rem}
-.dh{font-family:'DM Sans',sans-serif;font-weight:800;font-size:1.75rem;color:var(--w);line-height:1.2;margin-bottom:.85rem;letter-spacing:-.008em}
-.dh em{font-style:normal;color:var(--a)}
-.dp2{font-size:.84rem;line-height:1.88;color:var(--soft)}
-.dp2 strong{color:var(--ink)}
-.dcs{display:flex;flex-direction:column;gap:.75rem}
-.dci{display:flex;align-items:center;gap:.75rem;font-size:.82rem;color:var(--ink)}
-.dck{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.28);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--a)}
-
-/* ── CONTACT ── */
-#contact{background:var(--bg2);padding:9rem 5%;position:relative;overflow:hidden}
-#contact::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(245,166,35,.08),transparent 65%);pointer-events:none}
-.ctin{max-width:700px;margin:0 auto;text-align:center;position:relative}
-.cth{font-family:'DM Sans',sans-serif;font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;letter-spacing:-.015em;color:var(--w);line-height:1.1;margin-bottom:1.2rem}
-.cth em{font-style:normal;background:linear-gradient(135deg,var(--a),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.ctp{font-size:.9rem;line-height:1.88;color:var(--soft);margin-bottom:2.8rem}
-.ctp strong{color:var(--ink)}
-.ccr{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.cc{display:flex;align-items:center;gap:.55rem;padding:.8rem 1.4rem;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line);font-size:.82rem;font-weight:500;color:var(--ink);transition:.2s}
-.cc:hover{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.3);color:var(--w)}
-.loc{display:inline-flex;align-items:center;gap:.5rem;font-size:.73rem;color:var(--mute);background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:100px;padding:.38rem .95rem}
-
-footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;display:flex;align-items:center;justify-content:space-between}
-.fl{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--mute)}
-.fl strong{color:var(--w)}
-.fr{font-size:.66rem;color:var(--mute)}
-
-
-/* ── WORD CYCLE ANIMATION ── */
-.word-cycle-wrap{
-  display:inline-block;
-  position:relative;
-  min-width:180px;
-  text-align:left;
-  height:1.2em;
-  vertical-align:middle;
-  overflow:visible;
+@keyframes fup { 
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0px); }
 }
-.word-cycle{
-  display:inline-block;
-  color:var(--w);
-  animation:none;
-  position:relative;
+
+.hh { font-family: "DM Sans", sans-serif; font-size: clamp(1.9rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.005em; color: var(--w); animation: 0.8s ease 0.15s 1 normal both running fup; }
+
+.ga { background: linear-gradient(135deg, rgb(245, 166, 35), rgb(255, 209, 102)) text; -webkit-text-fill-color: transparent; display: block; }
+
+.gb { color: var(--teal); display: block; }
+
+.hs { margin: 1.9rem auto 0px; font-size: 1.02rem; font-weight: 300; line-height: 2; color: var(--soft); max-width: 700px; animation: 0.8s ease 0.3s 1 normal both running fup; }
+
+.hs strong { color: var(--ink); font-weight: 500; }
+
+.hs em { font-style: normal; color: var(--a); font-weight: 500; }
+
+.hbtns { margin-top: 2.6rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: 0.8s ease 0.45s 1 normal both running fup; }
+
+.bta { padding: 0.92rem 2.3rem; border-radius: 8px; background: linear-gradient(135deg,var(--a),var(--e)); color: rgb(255, 255, 255); font-weight: 700; font-size: 0.88rem; box-shadow: rgba(245, 166, 35, 0.32) 0px 0px 38px; transition: 0.25s; }
+
+.bta:hover { transform: translateY(-3px); box-shadow: rgba(245, 166, 35, 0.52) 0px 0px 60px; }
+
+.btb { padding: 0.92rem 2.3rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.13); background: rgba(255, 255, 255, 0.03); color: var(--ink); font-weight: 500; font-size: 0.88rem; transition: 0.2s; }
+
+.btb:hover { border-color: rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.06); }
+
+.srow { display: flex; gap: 0px; max-width: 840px; margin: 4rem auto 0px; background: rgba(255, 255, 255, 0.024); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; animation: 0.8s ease 0.6s 1 normal both running fup; }
+
+.st { flex: 1 1 0%; padding: 1.5rem 1rem; text-align: center; border-right: 1px solid var(--line); }
+
+.st:last-child { border-right-width: medium; border-right-style: none; border-right-color: currentcolor; }
+
+.stn { font-family: "DM Sans", sans-serif; font-size: 1.85rem; font-weight: 800; color: var(--w); display: block; line-height: 1; }
+
+.stn em { color: var(--a); font-style: normal; }
+
+.stl { font-size: 0.62rem; color: var(--mute); text-transform: uppercase; letter-spacing: 0.09em; display: block; margin-top: 0.35rem; }
+
+.belt { padding: 1.2rem 0px; overflow: hidden; background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.bt { display: flex; gap: 3rem; width: max-content; animation: 30s linear 0s infinite normal none running mq; }
+
+@keyframes mq { 
+  100% { transform: translateX(-50%); }
 }
-.word-slide-in{
-  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
+
+.mi { font-size: 0.72rem; font-weight: 700; color: var(--mute); letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+
+.mi strong { color: var(--w); }
+
+.ms { color: var(--a); font-size: 0.5rem; }
+
+.sec { padding: 8rem 5%; }
+
+.wrap { max-width: 1180px; margin: 0px auto; }
+
+.eye { display: flex; align-items: center; gap: 0.6rem; font-family: "JetBrains Mono", monospace; font-size: 0.63rem; color: var(--a); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.65rem; }
+
+.eye::before { content: ""; width: 20px; height: 1px; background: var(--a); }
+
+.sh2 { font-family: "DM Sans", sans-serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 700; letter-spacing: -0.01em; color: var(--w); line-height: 1.1; margin-bottom: 1rem; }
+
+.sp { font-size: 0.9rem; line-height: 1.9; color: var(--soft); max-width: 580px; margin-bottom: 3.5rem; }
+
+.pmb { background: linear-gradient(135deg, rgba(245, 166, 35, 0.08), rgba(255, 107, 53, 0.04)); border: 1px solid rgba(245, 166, 35, 0.18); border-radius: 20px; padding: 3rem 3.5rem; margin-bottom: 5rem; position: relative; overflow: hidden; }
+
+.pmb::before { content: ""; position: absolute; top: -80px; right: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 166, 35, 0.12), transparent 65%); pointer-events: none; }
+
+.pmb-eye { font-family: "JetBrains Mono", monospace; font-size: 0.62rem; color: var(--a); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.7rem; }
+
+.pmb-h { font-family: "DM Sans", sans-serif; font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 800; color: var(--w); line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.008em; }
+
+.pmb-h em { font-style: normal; color: var(--a); }
+
+.pmb-p { font-size: 0.88rem; line-height: 1.92; color: var(--soft); max-width: 840px; }
+
+.pmb-p strong { color: var(--ink); }
+
+.co { margin-bottom: 5.5rem; padding-bottom: 5.5rem; border-bottom: 1px solid var(--line); }
+
+.co:last-child { border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; margin-bottom: 0px; padding-bottom: 0px; }
+
+.co-hd { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+
+.con { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--w); letter-spacing: -0.008em; margin-bottom: 0.3rem; }
+
+.cor { font-size: 0.88rem; color: var(--a); font-weight: 600; margin-bottom: 0.35rem; }
+
+.cop { font-family: "JetBrains Mono", monospace; font-size: 0.63rem; color: var(--mute); letter-spacing: 0.07em; text-transform: uppercase; }
+
+.cobg { display: inline-flex; align-items: center; padding: 0.42rem 1.05rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+
+.cb0 { background: rgba(30, 217, 160, 0.1); border: 1px solid rgba(30, 217, 160, 0.25); color: var(--teal); }
+
+.cb1 { background: rgba(245, 166, 35, 0.1); border: 1px solid rgba(245, 166, 35, 0.25); color: var(--a); }
+
+.cb2 { background: rgba(255, 209, 102, 0.08); border: 1px solid rgba(255, 209, 102, 0.22); color: var(--g); }
+
+.cb3 { background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.25); color: var(--e); }
+
+.mgmt-card { background: linear-gradient(135deg, rgba(30, 217, 160, 0.05), rgba(245, 166, 35, 0.03)); border: 1px solid rgba(30, 217, 160, 0.2); border-radius: 16px; padding: 2rem 2.2rem; margin-bottom: 1.1rem; position: relative; overflow: hidden; }
+
+.mgmt-card::before { content: ""; position: absolute; top: 0px; left: 0px; bottom: 0px; width: 3px; background: linear-gradient(180deg,var(--teal),var(--a)); }
+
+.mc-hd { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.3rem; }
+
+.mc-ico { width: 32px; height: 32px; border-radius: 8px; background: rgba(30, 217, 160, 0.15); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+
+.mc-title { font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 0.92rem; color: var(--w); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.mc-sub { font-size: 0.72rem; color: var(--teal); margin-top: 0.1rem; letter-spacing: 0.04em; }
+
+.mgmt-pts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+
+.mp { display: flex; align-items: flex-start; gap: 0.65rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(30, 217, 160, 0.1); border-radius: 10px; padding: 0.85rem 1rem; }
+
+.mp-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin-top: 0.42rem; flex-shrink: 0; }
+
+.mp-txt { font-size: 0.8rem; line-height: 1.7; color: var(--soft); }
+
+.mp-txt strong { color: var(--ink); display: block; font-size: 0.82rem; margin-bottom: 0.1rem; }
+
+.mtags { display: flex; flex-wrap: wrap; gap: 0.42rem; margin-top: 1.2rem; }
+
+.mt { font-size: 0.66rem; padding: 0.28rem 0.72rem; border-radius: 100px; background: rgba(30, 217, 160, 0.08); border: 1px solid rgba(30, 217, 160, 0.2); color: rgba(30, 217, 160, 0.88); font-weight: 500; }
+
+.eng-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 2rem 2.2rem; position: relative; overflow: hidden; }
+
+.eng-card::before { content: ""; position: absolute; top: 0px; left: 0px; bottom: 0px; width: 3px; background: linear-gradient(180deg,var(--a),var(--e)); }
+
+.ec-hd { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.3rem; }
+
+.ec-ico { width: 32px; height: 32px; border-radius: 8px; background: rgba(245, 166, 35, 0.12); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+
+.ec-title { font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 0.92rem; color: var(--w); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.ec-sub { font-size: 0.72rem; color: var(--a); margin-top: 0.1rem; letter-spacing: 0.04em; }
+
+.eng-pts { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.ep { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; line-height: 1.7; color: var(--soft); }
+
+.ep::before { content: "→"; color: var(--a); font-size: 0.75rem; margin-top: 0.2rem; flex-shrink: 0; }
+
+.proj-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
+
+.pc { background: var(--bg3); border: 1px solid var(--line); border-radius: 13px; overflow: hidden; transition: 0.35s; transform-style: preserve-3d; cursor: default; }
+
+.pc:hover { border-color: rgba(245, 166, 35, 0.28); box-shadow: rgba(0, 0, 0, 0.45) 0px 24px 60px, rgba(245, 166, 35, 0.08) 0px 0px 0px 1px; }
+
+.pct { padding: 1.5rem 1.5rem 1.1rem; }
+
+.pty { display: inline-flex; font-family: "JetBrains Mono", monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.65rem; border-radius: 100px; margin-bottom: 0.85rem; }
+
+.pa { background: rgba(30, 217, 160, 0.08); border: 1px solid rgba(30, 217, 160, 0.2); color: var(--teal); }
+
+.pw { background: rgba(245, 166, 35, 0.08); border: 1px solid rgba(245, 166, 35, 0.2); color: var(--a); }
+
+.pe { background: rgba(255, 107, 53, 0.08); border: 1px solid rgba(255, 107, 53, 0.2); color: var(--e); }
+
+.pn { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 1rem; color: var(--w); margin-bottom: 0.45rem; }
+
+.pd { font-size: 0.78rem; line-height: 1.72; color: var(--soft); }
+
+.pf { padding: 0.8rem 1.5rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.pk { font-size: 0.61rem; padding: 0.18rem 0.5rem; border-radius: 3px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); color: var(--mute); }
+
+#docian { background: var(--bg2); position: relative; overflow: hidden; }
+
+#docian::before { content: ""; position: absolute; top: -180px; right: -150px; width: 650px; height: 650px; border-radius: 50%; background: radial-gradient(circle, rgba(30, 217, 160, 0.07), transparent 65%); pointer-events: none; }
+
+.dg { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: start; }
+
+.dlive { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(30, 217, 160, 0.08); border: 1px solid rgba(30, 217, 160, 0.2); border-radius: 100px; padding: 0.35rem 0.9rem; font-size: 0.67rem; font-weight: 700; color: var(--teal); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 1.1rem; }
+
+.ld { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: 1.6s ease 0s infinite normal none running sol; }
+
+.dt { font-family: "DM Sans", sans-serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 800; letter-spacing: -0.01em; color: var(--w); line-height: 1.1; margin-bottom: 0.5rem; }
+
+.dt em { font-style: normal; color: var(--a); }
+
+.dreg { font-family: "JetBrains Mono", monospace; font-size: 0.62rem; color: var(--mute); margin-bottom: 1rem; }
+
+.dtag { font-size: 0.9rem; font-weight: 500; color: var(--teal); margin-bottom: 1.2rem; line-height: 1.5; }
+
+.dp { font-size: 0.87rem; line-height: 1.92; color: var(--soft); margin-bottom: 1.8rem; }
+
+.dp strong { color: var(--ink); }
+
+.dfeats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-bottom: 2rem; }
+
+.df { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: 10px; padding: 0.9rem 1rem; display: flex; align-items: flex-start; gap: 0.65rem; transition: 0.2s; }
+
+.df:hover { border-color: rgba(245, 166, 35, 0.22); background: rgba(245, 166, 35, 0.04); }
+
+.dfi { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+.dft { font-size: 0.74rem; line-height: 1.6; color: var(--soft); }
+
+.dft strong { color: var(--ink); display: block; font-size: 0.77rem; margin-bottom: 0.15rem; }
+
+.srow2 { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+
+.sp2 { display: flex; align-items: center; gap: 0.5rem; padding: 0.58rem 1.05rem; border-radius: 8px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.77rem; font-weight: 500; color: var(--ink); transition: 0.2s; }
+
+.sp2:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.22); }
+
+.sp2.site { background: rgba(245, 166, 35, 0.08); border-color: rgba(245, 166, 35, 0.25); color: var(--a); }
+
+.sp2.site:hover { background: rgba(245, 166, 35, 0.15); }
+
+.pills { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+
+.pill { font-family: "JetBrains Mono", monospace; font-size: 0.62rem; padding: 0.23rem 0.58rem; border-radius: 4px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); color: var(--mute); }
+
+.pw2 { display: flex; justify-content: center; position: relative; }
+
+.ph { width: 265px; background: linear-gradient(158deg, rgb(17, 25, 40), rgb(11, 16, 24)); border-radius: 38px; border: 2px solid rgba(255, 255, 255, 0.08); box-shadow: rgba(0, 0, 0, 0.65) 0px 55px 120px, rgba(255, 255, 255, 0.07) 0px 1px 0px inset; overflow: hidden; transform: rotateY(-8deg) rotateX(3deg); transition: transform 0.5s; }
+
+.ph:hover { transform: rotateY(0deg) rotateX(0deg); }
+
+.phn { width: 68px; height: 5px; background: rgba(255, 255, 255, 0.06); border-radius: 3px; margin: 13px auto 0px; }
+
+.phs { padding: 1rem 0.9rem 1.5rem; }
+
+.phtb { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; padding-bottom: 0.55rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+.phnm { font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 0.88rem; color: var(--w); }
+
+.phnm span { color: var(--a); }
+
+.phbd { font-size: 0.54rem; font-weight: 700; color: var(--a); background: rgba(245, 166, 35, 0.1); border: 1px solid rgba(245, 166, 35, 0.22); padding: 0.14rem 0.4rem; border-radius: 100px; letter-spacing: 0.06em; }
+
+.bub { border-radius: 11px; padding: 0.58rem 0.78rem; font-size: 0.7rem; line-height: 1.55; margin-bottom: 0.42rem; }
+
+.bu { background: linear-gradient(135deg, rgb(181, 114, 26), rgb(139, 79, 0)); color: rgb(255, 255, 255); margin-left: 1.6rem; border-bottom-right-radius: 2px; }
+
+.ba { background: rgba(255, 255, 255, 0.05); color: var(--ink); margin-right: 0.75rem; border-bottom-left-radius: 2px; }
+
+.bal { font-size: 0.54rem; color: var(--a); font-weight: 700; letter-spacing: 0.07em; display: block; margin-bottom: 0.2rem; }
+
+.phf { margin-top: 0.85rem; display: flex; flex-direction: column; gap: 0.28rem; }
+
+.pfi { display: flex; align-items: center; gap: 0.45rem; font-size: 0.64rem; color: var(--mute); padding: 0.32rem 0.45rem; border-radius: 7px; background: rgba(255, 255, 255, 0.024); }
+
+.pfd { width: 4px; height: 4px; border-radius: 50%; background: var(--a); flex-shrink: 0; }
+
+.fc { position: absolute; right: -52px; top: 105px; width: 148px; background: rgba(10, 14, 26, 0.92); border: 1px solid rgba(245, 166, 35, 0.2); border-radius: 12px; padding: 0.8rem 0.95rem; backdrop-filter: blur(16px); box-shadow: rgba(0, 0, 0, 0.5) 0px 18px 45px; animation: 4s ease-in-out 0s infinite normal none running bob; }
+
+@keyframes bob { 
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
 }
-.word-slide-out{
-  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
+
+.fcl { font-size: 0.56rem; color: var(--mute); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.22rem; }
+
+.fcv { font-family: "DM Sans", sans-serif; font-size: 1rem; font-weight: 800; color: var(--a); }
+
+.fcs { font-size: 0.56rem; color: var(--mute); margin-top: 0.12rem; }
+
+.sk-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+
+.sk { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.8rem; position: relative; overflow: hidden; transition: 0.3s; transform-style: preserve-3d; }
+
+.sk:hover { transform: translateY(-4px) rotateX(2deg); border-color: rgba(245, 166, 35, 0.22); box-shadow: rgba(0, 0, 0, 0.35) 0px 18px 50px; }
+
+.sk::after { content: ""; position: absolute; top: 0px; left: 0px; right: 0px; height: 2px; background: linear-gradient(90deg,var(--a),var(--e)); }
+
+.ski { font-size: 1.45rem; margin-bottom: 0.85rem; }
+
+.skt { font-family: "DM Sans", sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--w); margin-bottom: 0.88rem; }
+
+.skl { display: flex; flex-direction: column; gap: 0.42rem; }
+
+.skli { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.78rem; color: var(--soft); line-height: 1.55; }
+
+.skli::before { content: "—"; color: var(--a); font-size: 0.6rem; margin-top: 0.22rem; flex-shrink: 0; }
+
+.diff { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; background: linear-gradient(135deg, rgba(245, 166, 35, 0.06), rgba(255, 107, 53, 0.04)); border: 1px solid rgba(245, 166, 35, 0.14); border-radius: 20px; padding: 3rem; margin-top: 3rem; }
+
+.dh { font-family: "DM Sans", sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--w); line-height: 1.2; margin-bottom: 0.85rem; letter-spacing: -0.008em; }
+
+.dh em { font-style: normal; color: var(--a); }
+
+.dp2 { font-size: 0.84rem; line-height: 1.88; color: var(--soft); }
+
+.dp2 strong { color: var(--ink); }
+
+.dcs { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.dci { display: flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; color: var(--ink); }
+
+.dck { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; background: rgba(245, 166, 35, 0.12); border: 1px solid rgba(245, 166, 35, 0.28); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--a); }
+
+#contact { background: var(--bg2); padding: 9rem 5%; position: relative; overflow: hidden; }
+
+#contact::before { content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 900px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(245, 166, 35, 0.08), transparent 65%); pointer-events: none; }
+
+.ctin { max-width: 700px; margin: 0px auto; text-align: center; position: relative; }
+
+.cth { font-family: "DM Sans", sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 800; letter-spacing: -0.015em; color: var(--w); line-height: 1.1; margin-bottom: 1.2rem; }
+
+.cth em { font-style: normal; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.ctp { font-size: 0.9rem; line-height: 1.88; color: var(--soft); margin-bottom: 2.8rem; }
+
+.ctp strong { color: var(--ink); }
+
+.ccr { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+
+.cc { display: flex; align-items: center; gap: 0.55rem; padding: 0.8rem 1.4rem; border-radius: 10px; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); font-size: 0.82rem; font-weight: 500; color: var(--ink); transition: 0.2s; }
+
+.cc:hover { background: rgba(245, 166, 35, 0.1); border-color: rgba(245, 166, 35, 0.3); color: var(--w); }
+
+.loc { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.73rem; color: var(--mute); background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: 100px; padding: 0.38rem 0.95rem; }
+
+footer { background: var(--bg); border-top: 1px solid var(--line); padding: 1.8rem 5%; display: flex; align-items: center; justify-content: space-between; }
+
+.fl { font-family: "JetBrains Mono", monospace; font-size: 0.66rem; color: var(--mute); }
+
+.fl strong { color: var(--w); }
+
+.fr { font-size: 0.66rem; color: var(--mute); }
+
+.word-cycle-wrap { display: inline-block; position: relative; min-width: 180px; text-align: left; height: 1.2em; vertical-align: middle; overflow: visible; }
+
+.word-cycle { display: inline-block; color: var(--w); animation: auto ease 0s 1 normal none running none; position: relative; }
+
+.word-slide-in { animation: 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal forwards running slideIn; }
+
+.word-slide-out { animation: 0.45s cubic-bezier(0.55, 0, 0.9, 0.45) 0s 1 normal forwards running slideOut; }
+
+@keyframes slideIn { 
+  0% { opacity: 0; transform: perspective(600px) translateY(60px) rotateX(-25deg) scale(0.85); }
+  100% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
 }
-@keyframes slideIn{
-  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
-  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
+
+@keyframes slideOut { 
+  0% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
+  100% { opacity: 0; transform: perspective(600px) translateY(-55px) rotateX(22deg) scale(0.88); }
 }
-@keyframes slideOut{
-  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
-  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
+
+.rare-box { display: flex; align-items: flex-start; gap: 0.9rem; margin: 2rem auto 0px; max-width: 720px; background: rgba(30, 217, 160, 0.06); border: 1px solid rgba(30, 217, 160, 0.18); border-radius: 14px; padding: 1.2rem 1.6rem; text-align: left; animation: 0.8s ease 0.38s 1 normal both running fup; }
+
+.rare-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+.rare-text { font-size: 0.86rem; line-height: 1.82; color: var(--soft); }
+
+.rare-text strong { color: var(--w); font-weight: 600; }
+
+@media (max-width: 960px) {
+  .nl, .nb { display: none; }
+  .sec { padding: 5rem 5%; }
+  .dg, .diff, .sk-g { grid-template-columns: 1fr; }
+  .fc { display: none; }
+  .ph { transform: none; }
+  .co-hd { flex-direction: column; }
+  .mgmt-pts { grid-template-columns: 1fr; }
+  .pmb { padding: 2rem 1.5rem; }
+  .word-cycle-wrap { display: inline-block; position: relative; min-width: 180px; text-align: left; height: 1.2em; vertical-align: middle; overflow: visible; }
+  .word-cycle { display: inline-block; color: var(--w); animation: auto ease 0s 1 normal none running none; position: relative; }
+  .word-slide-in { animation: 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal forwards running slideIn; }
+  .word-slide-out { animation: 0.45s cubic-bezier(0.55, 0, 0.9, 0.45) 0s 1 normal forwards running slideOut; }
+  @keyframes slideIn { 
+  0% { opacity: 0; transform: perspective(600px) translateY(60px) rotateX(-25deg) scale(0.85); }
+  100% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
 }
-.rare-box{display:flex;align-items:flex-start;gap:.9rem;margin:2rem auto 0;max-width:720px;background:rgba(30,217,160,.06);border:1px solid rgba(30,217,160,.18);border-radius:14px;padding:1.2rem 1.6rem;text-align:left;animation:fup .8s .38s ease both}
-.rare-icon{font-size:1.4rem;flex-shrink:0;margin-top:.05rem}
-.rare-text{font-size:.86rem;line-height:1.82;color:var(--soft)}
-.rare-text strong{color:var(--w);font-weight:600}
-@media(max-width:960px){
-  .nl,.nb{display:none}
-  .sec{padding:5rem 5%}
-  .dg,.diff,.sk-g{grid-template-columns:1fr}
-  .fc{display:none}.ph{transform:none}
-  .co-hd{flex-direction:column}
-  .mgmt-pts{grid-template-columns:1fr}
-  .pmb{padding:2rem 1.5rem}
-  
-/* ── WORD CYCLE ANIMATION ── */
-.word-cycle-wrap{
-  display:inline-block;
-  position:relative;
-  min-width:180px;
-  text-align:left;
-  height:1.2em;
-  vertical-align:middle;
-  overflow:visible;
+  @keyframes slideOut { 
+  0% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
+  100% { opacity: 0; transform: perspective(600px) translateY(-55px) rotateX(22deg) scale(0.88); }
 }
-.word-cycle{
-  display:inline-block;
-  color:var(--w);
-  animation:none;
-  position:relative;
+  .rare-box { flex-direction: column; gap: 0.6rem; }
 }
-.word-slide-in{
-  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
+
+@media (max-width: 600px) {
+  #hero { padding: 7rem 5% 4rem; }
+  .srow { flex-wrap: wrap; }
+  .st { min-width: 50%; border-right-width: medium; border-right-style: none; border-right-color: currentcolor; border-bottom: 1px solid var(--line); }
+  .st:nth-child(2n+1) { border-right: 1px solid var(--line); }
+  .dfeats { grid-template-columns: 1fr; }
+  .hbtns { flex-direction: column; align-items: center; }
+  .bta, .btb { width: 100%; text-align: center; }
+  .word-cycle-wrap { display: inline-block; position: relative; min-width: 180px; text-align: left; height: 1.2em; vertical-align: middle; overflow: visible; }
+  .word-cycle { display: inline-block; color: var(--w); animation: auto ease 0s 1 normal none running none; position: relative; }
+  .word-slide-in { animation: 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0s 1 normal forwards running slideIn; }
+  .word-slide-out { animation: 0.45s cubic-bezier(0.55, 0, 0.9, 0.45) 0s 1 normal forwards running slideOut; }
+  @keyframes slideIn { 
+  0% { opacity: 0; transform: perspective(600px) translateY(60px) rotateX(-25deg) scale(0.85); }
+  100% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
 }
-.word-slide-out{
-  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
+  @keyframes slideOut { 
+  0% { opacity: 1; transform: perspective(600px) translateY(0px) rotateX(0deg) scale(1); }
+  100% { opacity: 0; transform: perspective(600px) translateY(-55px) rotateX(22deg) scale(0.88); }
 }
-@keyframes slideIn{
-  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
-  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
+  .rare-box { text-align: center; }
+  .mgmt-card, .eng-card { padding: 1.5rem 1.2rem; }
+  .co { margin-bottom: 3rem; padding-bottom: 3rem; }
+  .sc { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(2"] { grid-template-columns: 1fr !important; }
+  .diff { padding: 1.8rem 1.4rem; gap: 2rem; }
+  .proj-row { grid-template-columns: 1fr; }
+  .ccr { flex-direction: column; align-items: center; }
+  .cc { width: 100%; justify-content: center; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 5%; }
 }
-@keyframes slideOut{
-  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
-  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: auto ease 0s 1 normal none running none !important; transition: none !important; }
 }
-.rare-box{flex-direction:column;gap:.6rem}
-}
-@media(max-width:600px){
-  #hero{padding:7rem 5% 4rem}
-  .srow{flex-wrap:wrap}.st{min-width:50%;border-right:none;border-bottom:1px solid var(--line)}
-  .st:nth-child(odd){border-right:1px solid var(--line)}
-  .dfeats{grid-template-columns:1fr}
-  .hbtns{flex-direction:column;align-items:center}
-  .bta,.btb{width:100%;text-align:center}
-  
-/* ── WORD CYCLE ANIMATION ── */
-.word-cycle-wrap{
-  display:inline-block;
-  position:relative;
-  min-width:180px;
-  text-align:left;
-  height:1.2em;
-  vertical-align:middle;
-  overflow:visible;
-}
-.word-cycle{
-  display:inline-block;
-  color:var(--w);
-  animation:none;
-  position:relative;
-}
-.word-slide-in{
-  animation:slideIn .55s cubic-bezier(.22,1,.36,1) forwards;
-}
-.word-slide-out{
-  animation:slideOut .45s cubic-bezier(.55,0,.9,.45) forwards;
-}
-@keyframes slideIn{
-  0%  {opacity:0;transform:perspective(600px) translateY(60px) rotateX(-25deg) scale(.85);}
-  100%{opacity:1;transform:perspective(600px) translateY(0)    rotateX(0deg)   scale(1);}
-}
-@keyframes slideOut{
-  0%  {opacity:1;transform:perspective(600px) translateY(0)     rotateX(0deg)  scale(1);}
-  100%{opacity:0;transform:perspective(600px) translateY(-55px) rotateX(22deg) scale(.88);}
-}
-.rare-box{text-align:center}
-  .mgmt-card,.eng-card{padding:1.5rem 1.2rem}
-  .co{margin-bottom:3rem;padding-bottom:3rem}
-  .sc{grid-template-columns:1fr !important}
-  [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important}
-  [style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr !important}
-  .diff{padding:1.8rem 1.4rem;gap:2rem}
-  .proj-row{grid-template-columns:1fr}
-  .ccr{flex-direction:column;align-items:center}
-  .cc{width:100%;justify-content:center}
-  footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem 5%}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Riyaz Shaik · Product Manager · TPM · Founder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="logo"><div class="lp"></div>Riyaz</div>
+  <div class="logo"><div class="lp"></div>Riyaz Shaik</div>
   <ul class="nl">
-    <li><a href="#pm">PM Work</a></li>
-    <li><a href="#experience">Journey</a></li>
-    <li><a href="#docian">Docian AI</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://riyazshaik-techexp.github.io/portfolio/#pm">PM Work</a></li>
+    <li><a href="https://riyazshaik-techexp.github.io/portfolio/#experience">Journey</a></li>
+    <li><a href="https://riyazshaik-techexp.github.io/portfolio/#docian">Docian AI</a></li>
+    <li><a href="https://riyazshaik-techexp.github.io/portfolio/#skills">Skills</a></li>
+    <li><a href="https://riyazshaik-techexp.github.io/portfolio/#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nb">Let's Talk</a>
+  <a href="https://riyazshaik-techexp.github.io/portfolio/#contact" class="nb">Let's Talk</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <canvas id="cvs"></canvas>
+  <canvas id="cvs" width="300" height="150"></canvas>
   <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
   <div class="hg"></div>
   <div class="hi">
@@ -409,9 +539,9 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
     <h1 class="hh" style="line-height:1.3;text-align:center">
       <div style="display:flex;align-items:center;justify-content:center;gap:.25em;flex-wrap:nowrap">
         <span style="color:var(--w)">I</span>
-        <span class="word-cycle-wrap"><span class="word-cycle" id="wc"></span></span>
+        <span class="word-cycle-wrap"><span class="word-cycle word-slide-in" id="wc" style="color: rgb(255, 209, 102); text-shadow: rgba(255, 209, 102, 0.333) 0px 0px 40px;">Build.</span></span>
       </div>
-      <span class="ga" style="display:block;font-size:clamp(.95rem,2.5vw,1.5rem);font-weight:500;letter-spacing:.01em;margin-top:.4rem;background:linear-gradient(135deg,#F5A623,#FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">The PM who can build what he plans.</span>
+      <span class="ga" style="display:block;font-size:clamp(.95rem,2.5vw,1.5rem);font-weight:500;letter-spacing:.01em;margin-top:.4rem;background:linear-gradient(135deg,#F5A623,#FFD166);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">A PM who plans with precision, leads with clarity, and knows how to build.</span>
     </h1>
     <p class="hs">
       I've been practising PM for <strong>7 years without the title</strong> —
@@ -430,8 +560,8 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
       </div>
     </div>
     <div class="hbtns">
-      <a href="#pm" class="bta">See My PM Work →</a>
-      <a href="#experience" class="btb">Full Journey</a>
+      <a href="https://riyazshaik-techexp.github.io/portfolio/#pm" class="bta">See My PM Work →</a>
+      <a href="https://riyazshaik-techexp.github.io/portfolio/#experience" class="btb">Full Journey</a>
     </div>
     <div class="srow">
       <div class="st"><span class="stn">7<em>+</em></span><span class="stl">Years PM Practice</span></div>
@@ -542,7 +672,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <div style="background:var(--card);border:1px solid rgba(30,217,160,.18);border-radius:14px;padding:1.8rem;height:100%;position:relative;overflow:hidden">
           <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--a))"></div>
           <div style="font-size:1.5rem;margin-bottom:.9rem">🗺️</div>
-          <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--w);margin-bottom:.6rem">Roadmaps & Iteration Planning</div>
+          <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--w);margin-bottom:.6rem">Roadmaps &amp; Iteration Planning</div>
           <p style="font-size:.8rem;line-height:1.78;color:var(--soft)">At <strong style="color:var(--ink)">Futuretech</strong> designed product roadmaps and feature plans — sequenced delivery priorities, defined iteration milestones, and planned delivery flow coordinating across QA, backend, and design teams.</p>
           <div class="mtags" style="margin-top:.9rem">
             <span class="mt">Futuretech</span><span class="mt">Prodapt</span>
@@ -558,7 +688,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
       <div style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:1.4rem;color:var(--w);margin-bottom:.8rem;letter-spacing:-.005em">At Docian AI — complete product ownership, every dimension.</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
         <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">📄 9-Section PRD</strong>User personas, P0/P1/P2 feature tiers, functional specs, non-functional requirements, risk register, sprint timeline — structured for both engineering and investors.</div>
-        <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">📊 RICE & MoSCoW</strong>Applied both prioritisation frameworks across all roadmap decisions — feature sequencing, sprint scope, MVP definition, and investor-facing roadmap communication.</div>
+        <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">📊 RICE &amp; MoSCoW</strong>Applied both prioritisation frameworks across all roadmap decisions — feature sequencing, sprint scope, MVP definition, and investor-facing roadmap communication.</div>
         <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">🗂️ Live Jira Board</strong>Active Scrum workspace at docianai.atlassian.net — Sprint 0 and Sprint 1, story-pointed epics, four feature streams, managed backlog and tracked velocity.</div>
         <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">📈 Market Analysis</strong>TAM/SAM/SOM for India's IDP market (₹11,740 Cr at 35.75% CAGR), competitive gap analysis, 4-stream revenue model for ₹2 Crore seed round pitch.</div>
         <div style="font-size:.8rem;line-height:1.75;color:var(--soft)"><strong style="color:var(--ink);display:block;margin-bottom:.25rem">🤝 Gov. Stakeholders</strong>Navigated DPIIT, IndiaAI, MSME, and Startup India — built relationships, prepared documentation, and managed funding pathway communications independently.</div>
@@ -574,7 +704,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <p class="dp2">Most PM candidates learn sprint ceremonies in their first PM role. I've practised them for <strong>7 years under real delivery pressure</strong> — at Fortune 500 companies, with real Scrum Masters, managing real onshore and offshore teams. The title is new. The discipline isn't.<br><br>Add to that: I can write specs engineers trust, build roadmaps investors believe in, and ship products from zero to stores — not just plan them on slides.</p>
       </div>
       <div class="dcs">
-        <div class="dci"><div class="dck">✓</div>7 years sprint planning & backlog refinement</div>
+        <div class="dci"><div class="dck">✓</div>7 years sprint planning &amp; backlog refinement</div>
         <div class="dci"><div class="dck">✓</div>Risk register management — Prodapt, Fortune 500</div>
         <div class="dci"><div class="dck">✓</div>Onshore/offshore coordination across timezones</div>
         <div class="dci"><div class="dck">✓</div>Stakeholder requirements → specs → delivery</div>
@@ -600,17 +730,17 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
     <!-- DOCIAN AI -->
     <div class="co s3">
       <div class="co-hd">
-        <div><div class="con">Docian AI Technologies</div><div class="cor">Founder & CEO · Complete Product Owner</div><div class="cop">2024 — Present · Hyderabad, India</div></div>
+        <div><div class="con">Docian AI Technologies</div><div class="cor">Founder &amp; CEO · Complete Product Owner</div><div class="cop">2024 — Present · Hyderabad, India</div></div>
         <div class="cobg cb0">Founder · Full Ownership</div>
       </div>
       <!-- MANAGEMENT FIRST -->
       <div class="mgmt-card s3">
-        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Product Management & Leadership</div><div class="mc-sub">Owned every PM dimension — strategy, planning, execution, stakeholder management</div></div></div>
+        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Product Management &amp; Leadership</div><div class="mc-sub">Owned every PM dimension — strategy, planning, execution, stakeholder management</div></div></div>
         <div class="mgmt-pts">
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>9-Section PRD</strong>User personas, P0/P1/P2 feature tiers, functional specs, risk register, sprint timeline — authored completely solo for both engineering and investor audiences</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Live Jira Scrum Board</strong>Sprint 0 & Sprint 1 at docianai.atlassian.net — story-pointed epics, four feature streams, backlog management, velocity tracking</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>RICE & MoSCoW Prioritisation</strong>Applied across all roadmap decisions — MVP definition, sprint scope, feature sequencing, investor-facing roadmap</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Market Analysis & Investor Pitch</strong>TAM/SAM/SOM (₹11,740 Cr, 35.75% CAGR), competitive analysis, ₹2 Cr seed ask pitch deck with 4-stream revenue model</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Live Jira Scrum Board</strong>Sprint 0 &amp; Sprint 1 at docianai.atlassian.net — story-pointed epics, four feature streams, backlog management, velocity tracking</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>RICE &amp; MoSCoW Prioritisation</strong>Applied across all roadmap decisions — MVP definition, sprint scope, feature sequencing, investor-facing roadmap</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Market Analysis &amp; Investor Pitch</strong>TAM/SAM/SOM (₹11,740 Cr, 35.75% CAGR), competitive analysis, ₹2 Cr seed ask pitch deck with 4-stream revenue model</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Government Stakeholder Management</strong>Navigated DPIIT, IndiaAI, MSME, Startup India — relationships, documentation, funding pathways</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>End-to-End Product Delivery</strong>Concept → PRD → Design → Build → QA → iOS App Store → Google Play → Go-to-market. Zero hand-offs.</div></div>
         </div>
@@ -627,7 +757,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         </div>
       </div>
       <div class="proj-row">
-        <div class="pc s3 d1"><div class="pct"><div class="pty pa">📱 AI Mobile App · Live</div><div class="pn">Docian AI</div><div class="pd">Autonomous secure document vault — scan, encrypt, analyze, get smart reminders, ask Dokky anything about your documents. Live on iOS & Android.</div></div><div class="pf"><span class="pk">Ionic/Angular</span><span class="pk">Gemini</span><span class="pk">RAG</span><span class="pk">Firebase</span><span class="pk">AES-256</span></div></div>
+        <div class="pc s3 d1"><div class="pct"><div class="pty pa">📱 AI Mobile App · Live</div><div class="pn">Docian AI</div><div class="pd">Autonomous secure document vault — scan, encrypt, analyze, get smart reminders, ask Dokky anything about your documents. Live on iOS &amp; Android.</div></div><div class="pf"><span class="pk">Ionic/Angular</span><span class="pk">Gemini</span><span class="pk">RAG</span><span class="pk">Firebase</span><span class="pk">AES-256</span></div></div>
       </div>
     </div>
 
@@ -638,19 +768,19 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <div class="cobg cb1">Senior Engineer · Fortune 500</div>
       </div>
       <div class="mgmt-card s3">
-        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Management Practice — Inside Every Sprint</div><div class="mc-sub">Agile delivery alongside PMs and Scrum Masters — AT&T and Verizon accounts</div></div></div>
+        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Management Practice — Inside Every Sprint</div><div class="mc-sub">Agile delivery alongside PMs and Scrum Masters — AT&amp;T and Verizon accounts</div></div></div>
         <div class="mgmt-pts">
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Sprint Planning Contributor</strong>Estimated user stories with real technical grounding, mapped inter-team dependencies, flagged technical blockers before sprint commitment — shaping scope not just accepting it</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Backlog Refinement Participant</strong>Broke epics into implementable stories, defined acceptance criteria in technical terms, surfaced requirement ambiguities before sprint lock-in to prevent mid-sprint surprises</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Risk Register Management</strong>Actively maintained risk logs — logged technical risks with severity and impact, tracked mitigation plans, escalated blockers early before they became delivery failures</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Onshore–Offshore Team Coordination</strong>Managed delivery alignment between US onshore and India offshore teams — maintained clean async handoffs across timezones, aligned daily priorities, ensured zero context loss</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Iteration & Delivery Flow Planning</strong>Coordinated feature readiness across QA, backend, and design — tracked dependency chains between sprints, maintained delivery rhythm and momentum under SLA pressure</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Iteration &amp; Delivery Flow Planning</strong>Coordinated feature readiness across QA, backend, and design — tracked dependency chains between sprints, maintained delivery rhythm and momentum under SLA pressure</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Engineering–PM Bridge</strong>Translated technical constraints and risks into delivery timeline language for PMs and Scrum Masters — bridged the gap between what engineering could do and what stakeholders expected</div></div>
         </div>
         <div class="mtags"><span class="mt">Sprint Planning</span><span class="mt">Backlog Refinement</span><span class="mt">Risk Register</span><span class="mt">Onshore/Offshore</span><span class="mt">Iteration Planning</span><span class="mt">Delivery Flow</span><span class="mt">Scrum Ceremonies</span></div>
       </div>
       <div class="eng-card s3">
-        <div class="ec-hd"><div class="ec-ico">⚙️</div><div><div class="ec-title">Engineering Execution</div><div class="ec-sub">Enterprise Angular architecture at Fortune 500 scale — AT&T and Verizon</div></div></div>
+        <div class="ec-hd"><div class="ec-ico">⚙️</div><div><div class="ec-title">Engineering Execution</div><div class="ec-sub">Enterprise Angular architecture at Fortune 500 scale — AT&amp;T and Verizon</div></div></div>
         <div class="eng-pts">
           <div class="ep">Architected nested routing systems — lazy-loaded module trees, route guards, resolver chains for complex enterprise Angular applications</div>
           <div class="ep">Built NgRx state management — actions, reducers, selectors, effects — for large-scale shared state across feature modules at telecom enterprise scale</div>
@@ -661,9 +791,9 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         </div>
       </div>
       <div class="proj-row">
-        <div class="pc s3 d1"><div class="pct"><div class="pty pe">🏢 Enterprise · AT&T</div><div class="pn">AT&T FlexAgent / FlexNow</div><div class="pd">Agent workflow platform — nested routing, NgRx state, RxJS pipelines, RBAC auth, micro-component architecture. Real-time task orchestration at enterprise scale.</div></div><div class="pf"><span class="pk">Angular 15</span><span class="pk">NgRx</span><span class="pk">RxJS</span><span class="pk">PrimeNG</span><span class="pk">RBAC</span></div></div>
-        <div class="pc s3 d2"><div class="pct"><div class="pty pe">🏢 Enterprise · AT&T</div><div class="pn">AT&T Highylet</div><div class="pd">Network operations dashboard — OnPush optimisation, virtual scrolling, lazy loading, high-throughput Observable streams for live infrastructure data.</div></div><div class="pf"><span class="pk">Angular 12</span><span class="pk">RxJS</span><span class="pk">OnPush</span><span class="pk">PrimeFaces</span></div></div>
-        <div class="pc s3 d3"><div class="pct"><div class="pty pe">🏢 Enterprise · Verizon</div><div class="pn">Verizon GCM VBG & MACD</div><div class="pd">Business Gateway and MACD provisioning — NgRx state, nested modules, OAuth 2.0 authentication for B2B service order management at Verizon scale.</div></div><div class="pf"><span class="pk">Angular 15</span><span class="pk">NgRx</span><span class="pk">OAuth 2.0</span><span class="pk">PrimeNG</span></div></div>
+        <div class="pc s3 d1"><div class="pct"><div class="pty pe">🏢 Enterprise · AT&amp;T</div><div class="pn">AT&amp;T FlexAgent / FlexNow</div><div class="pd">Agent workflow platform — nested routing, NgRx state, RxJS pipelines, RBAC auth, micro-component architecture. Real-time task orchestration at enterprise scale.</div></div><div class="pf"><span class="pk">Angular 15</span><span class="pk">NgRx</span><span class="pk">RxJS</span><span class="pk">PrimeNG</span><span class="pk">RBAC</span></div></div>
+        <div class="pc s3 d2"><div class="pct"><div class="pty pe">🏢 Enterprise · AT&amp;T</div><div class="pn">AT&amp;T Highylet</div><div class="pd">Network operations dashboard — OnPush optimisation, virtual scrolling, lazy loading, high-throughput Observable streams for live infrastructure data.</div></div><div class="pf"><span class="pk">Angular 12</span><span class="pk">RxJS</span><span class="pk">OnPush</span><span class="pk">PrimeFaces</span></div></div>
+        <div class="pc s3 d3"><div class="pct"><div class="pty pe">🏢 Enterprise · Verizon</div><div class="pn">Verizon GCM VBG &amp; MACD</div><div class="pd">Business Gateway and MACD provisioning — NgRx state, nested modules, OAuth 2.0 authentication for B2B service order management at Verizon scale.</div></div><div class="pf"><span class="pk">Angular 15</span><span class="pk">NgRx</span><span class="pk">OAuth 2.0</span><span class="pk">PrimeNG</span></div></div>
       </div>
     </div>
 
@@ -674,19 +804,19 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <div class="cobg cb2">Dev + PM Hybrid</div>
       </div>
       <div class="mgmt-card s3">
-        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Management & PM Practice</div><div class="mc-sub">Stakeholder management, roadmap design, cross-team coordination — Provizit & Meezah</div></div></div>
+        <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Management &amp; PM Practice</div><div class="mc-sub">Stakeholder management, roadmap design, cross-team coordination — Provizit &amp; Meezah</div></div></div>
         <div class="mgmt-pts">
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Stakeholder Requirements Gathering</strong>Conducted discovery sessions with business stakeholders — documented needs, validated scope, converted business requirements into structured, implementable feature specifications</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Product Roadmap & Feature Design</strong>Designed product roadmaps for Provizit and Meezah — sequenced feature priorities, defined iteration milestones, planned delivery rollouts, tracked progress against plan</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Product Roadmap &amp; Feature Design</strong>Designed product roadmaps for Provizit and Meezah — sequenced feature priorities, defined iteration milestones, planned delivery rollouts, tracked progress against plan</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Stakeholder ↔ Engineering Bridge</strong>Translated business requirements into precise technical language for backend developers, and communicated technical constraints back to stakeholders without losing meaning in either direction</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Frontend ↔ Backend Integration Management</strong>Aligned API contracts, resolved integration gaps, managed handoff timing — kept delivery flowing without blocking either side of the engineering chain</div></div>
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Sprint Ceremonies & Iteration Planning</strong>Participated in sprint planning, reviews, and retrospectives alongside PMs — contributed to scope decisions, flagged delivery risks, tracked own milestones against iteration plan</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Sprint Ceremonies &amp; Iteration Planning</strong>Participated in sprint planning, reviews, and retrospectives alongside PMs — contributed to scope decisions, flagged delivery risks, tracked own milestones against iteration plan</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Delivery Coordination</strong>Coordinated cross-functional delivery across product, backend, and QA — maintained iteration momentum and ensured on-time feature delivery for both cross-platform products</div></div>
         </div>
         <div class="mtags"><span class="mt">Requirements Gathering</span><span class="mt">Roadmap Design</span><span class="mt">Feature Planning</span><span class="mt">Stakeholder Bridge</span><span class="mt">Frontend↔Backend</span><span class="mt">Sprint Ceremonies</span><span class="mt">Iteration Planning</span></div>
       </div>
       <div class="eng-card s3">
-        <div class="ec-hd"><div class="ec-ico">⚙️</div><div><div class="ec-title">Engineering Execution</div><div class="ec-sub">Cross-platform web and mobile — Provizit & Meezah</div></div></div>
+        <div class="ec-hd"><div class="ec-ico">⚙️</div><div><div class="ec-title">Engineering Execution</div><div class="ec-sub">Cross-platform web and mobile — Provizit &amp; Meezah</div></div></div>
         <div class="eng-pts">
           <div class="ep">Built Provizit — visitor management cross-platform application for web and mobile (Angular + Ionic + Capacitor)</div>
           <div class="ep">Built Meezah — cross-platform web and mobile application, full frontend architecture from routing to API integration and state management</div>
@@ -708,7 +838,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
       <div class="mgmt-card s3">
         <div class="mc-hd"><div class="mc-ico">🎯</div><div><div class="mc-title">Management Practice — Even Here</div><div class="mc-sub">Client coordination, delivery flow, multi-project management</div></div></div>
         <div class="mgmt-pts">
-          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Sprint & Iteration Management</strong>Participated in sprint planning and scope decisions — tracked delivery milestones per project, managed own timeline across simultaneous client engagements without missing delivery targets</div></div>
+          <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Sprint &amp; Iteration Management</strong>Participated in sprint planning and scope decisions — tracked delivery milestones per project, managed own timeline across simultaneous client engagements without missing delivery targets</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Direct Client Coordination</strong>Gathered feedback, managed revision cycles, communicated progress updates, and ensured client satisfaction at delivery — effectively acting as the client-facing PM for each project</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Multi-Project Delivery Management</strong>Managed delivery flow across multiple concurrent client projects — prioritised work, flagged timeline risks proactively, and maintained quality across all simultaneous engagements</div></div>
           <div class="mp"><div class="mp-dot"></div><div class="mp-txt"><strong>Cross-Team Collaboration</strong>Coordinated with backend developers — aligned integration timelines, resolved API blockers without escalation, maintained delivery rhythm across parallel client projects</div></div>
@@ -739,23 +869,23 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
     <div class="eye">Flagship Product · Solo Built · Live Now</div>
     <div class="dg">
       <div class="sl">
-        <div class="dlive"><div class="ld"></div>Live on iOS & Android</div>
+        <div class="dlive"><div class="ld"></div>Live on iOS &amp; Android</div>
         <h2 class="dt">Docian AI —<br>Your Autonomous<br><em>Document Vault</em></h2>
         <p class="dreg">docianai.com · Docian AI Technologies Pvt Ltd · MSME: UDYAM-TS-25-0073969</p>
         <p class="dtag">Military-grade encryption. AI-powered understanding. Everything about your documents — always at your fingertips.</p>
         <p class="dp">Scan or upload any document — PDFs, images, certificates, medical reports. Docian AI extracts, analyzes, and summarizes everything, storing it with <strong>multi-layered end-to-end AES-256 encryption</strong>. <strong>Dokky</strong>, the AI chat assistant inside, lets you ask anything about your documents — get risk analysis summaries, compare with real-time information, predict health issues from medical reports, find education paths from marks, or get reminders before warranty or appointment end-dates. <strong>Download as PDF and share</strong> from anywhere, anytime.</p>
         <div class="dfeats">
-          <div class="df"><div class="dfi">📄</div><div class="dft"><strong>Scan & Upload</strong>PDFs, images, certificates — Neural OCR extracts and structures everything automatically</div></div>
+          <div class="df"><div class="dfi">📄</div><div class="dft"><strong>Scan &amp; Upload</strong>PDFs, images, certificates — Neural OCR extracts and structures everything automatically</div></div>
           <div class="df"><div class="dfi">🔐</div><div class="dft"><strong>Military-Grade Vault</strong>Multi-layered AES-256-CBC end-to-end encryption — your data, only yours</div></div>
           <div class="df"><div class="dfi">🔔</div><div class="dft"><strong>Smart Reminders</strong>Warranty ends, appointments, deadlines — Docian tracks and notifies your phone</div></div>
           <div class="df"><div class="dfi">🤖</div><div class="dft"><strong>Ask Dokky</strong>Chat with your documents — risk analysis, medical predictions, education paths</div></div>
           <div class="df"><div class="dfi">🌐</div><div class="dft"><strong>Real-Time Comparison</strong>Compare document data with current trends, laws, and live market information</div></div>
-          <div class="df"><div class="dfi">📤</div><div class="dft"><strong>Download & Share</strong>Export any document as PDF and share securely, anywhere, anytime</div></div>
+          <div class="df"><div class="dfi">📤</div><div class="dft"><strong>Download &amp; Share</strong>Export any document as PDF and share securely, anywhere, anytime</div></div>
         </div>
         <div class="srow2">
-          <a href="https://play.google.com/store/apps/details?id=com.docianai.app" target="_blank" class="sp2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 1-.97-.86V1.1a2 2 0 0 1 .97-.86l11.9 11.76-11.9 11.76zm13.48-8.37L4.3 22.17l8.26-8.17 4.1 1.39zm1.46-4.39c.49.27.49.69 0 .96l-2.11 1.19-4.57-4.5 4.57-4.51 2.11 1.19zm-14.94-9L16.66 8.8l-4.1 1.39L4.3 1.83z"/></svg>Play Store</a>
-          <a href="https://apps.apple.com/app/docian-ai/id6741430503" target="_blank" class="sp2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>App Store</a>
-          <a href="https://www.docianai.com" target="_blank" class="sp2 site">🌐 docianai.com</a>
+          <a href="https://play.google.com/store/apps/details?id=com.docianai.app" target="_blank" class="sp2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a2 2 0 0 1-.97-.86V1.1a2 2 0 0 1 .97-.86l11.9 11.76-11.9 11.76zm13.48-8.37L4.3 22.17l8.26-8.17 4.1 1.39zm1.46-4.39c.49.27.49.69 0 .96l-2.11 1.19-4.57-4.5 4.57-4.51 2.11 1.19zm-14.94-9L16.66 8.8l-4.1 1.39L4.3 1.83z"></path></svg>Play Store</a>
+          <a href="https://apps.apple.com/app/docian-ai/id6741430503" target="_blank" class="sp2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg>App Store</a>
+          <a href="https://www.docianai.com/" target="_blank" class="sp2 site">🌐 docianai.com</a>
         </div>
         <div class="pills">
           <span class="pill">Ionic/Angular</span><span class="pill">Node.js</span><span class="pill">Firebase</span><span class="pill">Gemini API</span><span class="pill">Mistral/LLaMA</span><span class="pill">RAG Pipeline</span><span class="pill">ML Kit OCR</span><span class="pill">Whisper STT</span><span class="pill">AES-256-CBC</span><span class="pill">Capacitor</span><span class="pill">WebSocket</span><span class="pill">Docker</span><span class="pill">FCM</span>
@@ -773,7 +903,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
               <div class="bub ba"><span class="bal">DOKKY · Smart Reminder</span>Maruti warranty expires 14 Aug 2025 — 52 days away. Phone reminder set ✓</div>
               <div class="phf">
                 <div class="pfi"><div class="pfd"></div>Military-grade multi-layer encryption</div>
-                <div class="pfi"><div class="pfd"></div>Risk analysis & medical predictions</div>
+                <div class="pfi"><div class="pfd"></div>Risk analysis &amp; medical predictions</div>
                 <div class="pfi"><div class="pfd"></div>Smart deadline reminders</div>
                 <div class="pfi"><div class="pfd"></div>Download PDF · Share anytime</div>
               </div>
@@ -797,32 +927,32 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <div class="skl">
           <div class="skli">PRD authorship — P0/P1/P2 feature tiers</div>
           <div class="skli">Stakeholder requirements gathering</div>
-          <div class="skli">RICE & MoSCoW prioritisation</div>
-          <div class="skli">Product roadmap & feature sequencing</div>
+          <div class="skli">RICE &amp; MoSCoW prioritisation</div>
+          <div class="skli">Product roadmap &amp; feature sequencing</div>
           <div class="skli">TAM/SAM/SOM market analysis</div>
-          <div class="skli">Investor pitch & go-to-market strategy</div>
+          <div class="skli">Investor pitch &amp; go-to-market strategy</div>
         </div>
       </div>
       <div class="sk s3 d2">
-        <div class="ski">🏃</div><div class="skt">Agile & Scrum</div>
+        <div class="ski">🏃</div><div class="skt">Agile &amp; Scrum</div>
         <div class="skl">
           <div class="skli">Sprint planning — estimation, scope, dependencies</div>
-          <div class="skli">Backlog refinement & story breakdown</div>
+          <div class="skli">Backlog refinement &amp; story breakdown</div>
           <div class="skli">Risk register — logging, tracking, escalation</div>
-          <div class="skli">Iteration planning & delivery flow</div>
+          <div class="skli">Iteration planning &amp; delivery flow</div>
           <div class="skli">Onshore/offshore team coordination</div>
-          <div class="skli">Retrospectives & velocity tracking</div>
+          <div class="skli">Retrospectives &amp; velocity tracking</div>
         </div>
       </div>
       <div class="sk s3 d3">
-        <div class="ski">🤝</div><div class="skt">Coordination & Delivery</div>
+        <div class="ski">🤝</div><div class="skt">Coordination &amp; Delivery</div>
         <div class="skl">
           <div class="skli">Stakeholder ↔ Engineering translation</div>
           <div class="skli">Frontend ↔ Backend integration management</div>
           <div class="skli">Cross-functional cross-timezone teams</div>
-          <div class="skli">Client feedback cycles & expectation mgmt</div>
-          <div class="skli">App Store & Play Store full delivery</div>
-          <div class="skli">Government & investor stakeholder management</div>
+          <div class="skli">Client feedback cycles &amp; expectation mgmt</div>
+          <div class="skli">App Store &amp; Play Store full delivery</div>
+          <div class="skli">Government &amp; investor stakeholder management</div>
         </div>
       </div>
       <div class="sk s3 d1">
@@ -837,7 +967,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         </div>
       </div>
       <div class="sk s3 d2">
-        <div class="ski">🔧</div><div class="skt">Backend & Cloud</div>
+        <div class="ski">🔧</div><div class="skt">Backend &amp; Cloud</div>
         <div class="skl">
           <div class="skli">Node.js / Express.js REST APIs</div>
           <div class="skli">Firebase — Firestore, Auth, Functions, FCM</div>
@@ -851,7 +981,7 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
         <div class="ski">🤖</div><div class="skt">AI / ML Integration</div>
         <div class="skl">
           <div class="skli">Gemini API — LLM orchestration</div>
-          <div class="skli">Mistral & LLaMA edge model integration</div>
+          <div class="skli">Mistral &amp; LLaMA edge model integration</div>
           <div class="skli">RAG pipeline architecture</div>
           <div class="skli">ML Kit Neural OCR</div>
           <div class="skli">Whisper STT — 7 Indian languages</div>
@@ -871,8 +1001,8 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
       <p class="ctp">Based in <strong>Gachibowli, Hyderabad</strong> — open to Bengaluru relocation.<br>Actively pursuing <strong>TPM, Product Manager, and Product Owner</strong> roles.<br>Management instincts. Engineering depth. Bias to ship.</p>
       <div class="ccr">
         <a href="mailto:riyaz@docianai.com" class="cc">✉ riyaz@docianai.com</a>
-        <a href="https://www.linkedin.com/in/riyazhomonovus?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="cc">🔗 LinkedIn</a>
-        <a href="https://www.docianai.com" target="_blank" class="cc">🌐 docianai.com</a>
+        <a href="https://www.linkedin.com/in/riyazhomonovus?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="cc">🔗 LinkedIn</a>
+        <a href="https://www.docianai.com/" target="_blank" class="cc">🌐 docianai.com</a>
         <a href="https://play.google.com/store/apps/details?id=com.docianai.app" target="_blank" class="cc">▶ Play Store</a>
         <a href="https://apps.apple.com/app/docian-ai/id6741430503" target="_blank" class="cc"> App Store</a>
       </div>
@@ -882,87 +1012,11 @@ footer{background:var(--bg);border-top:1px solid var(--line);padding:1.8rem 5%;d
 </section>
 
 <footer>
-  <div class="fl"><strong>Riyaz</strong> · Docian AI Technologies Pvt Ltd · MSME: UDYAM-TS-25-0073969</div>
+  <div class="fl"><strong>Riyaz Shaik</strong> · Docian AI Technologies Pvt Ltd · MSME: UDYAM-TS-25-0073969</div>
   <div class="fr">Hyderabad, India · Built with precision</div>
 </footer>
 
-<script>
-/* PARTICLE CANVAS */
-(function(){
-  const c=document.getElementById('cvs'),x=c.getContext('2d');
-  let W,H,P=[];
-  function rs(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}
-  rs();window.addEventListener('resize',rs);
-  function mk(){return{x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.35+.07}}
-  for(let i=0;i<120;i++)P.push(mk());
-  function draw(){
-    x.clearRect(0,0,W,H);
-    P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle=`rgba(245,166,35,${p.a})`;x.fill()});
-    for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<95){x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.strokeStyle=`rgba(245,166,35,${.06*(1-d/95)})`;x.lineWidth=.4;x.stroke()}}
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
 
-/* 3D SCROLL REVEAL */
-(function(){
-  const ob=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ob.unobserve(e.target)}})
-  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.s3,.sl,.sr,.sc').forEach(el=>ob.observe(el));
-})();
 
-/* NAV SHRINK */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('sh',scrollY>55));
 
-/* 3D MOUSE TILT on cards */
-document.querySelectorAll('.pc,.sk,.mp').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const rc=card.getBoundingClientRect();
-    const tx=((e.clientY-rc.top)/rc.height-.5)*9;
-    const ty=-((e.clientX-rc.left)/rc.width-.5)*9;
-    card.style.transform=`translateY(-5px) rotateX(${tx}deg) rotateY(${ty}deg) scale(1.02)`;
-    card.style.transition='none';
-  });
-  card.addEventListener('mouseleave',()=>{card.style.transform='';card.style.transition=''});
-});
-
-/* WORD CYCLE */
-(function(){
-  const words = [
-    {text:'Plan.',     color:'#F5A623'},
-    {text:'Build.',    color:'#FFD166'},
-    {text:'Ship.',     color:'#1ED9A0'},
-    {text:'Lead.',     color:'#a78bfa'},
-    {text:'Deliver.',  color:'#FF6B35'},
-  ];
-  let idx = 0;
-  const el = document.getElementById('wc');
-  if(!el) return;
-
-  function show(i){
-    el.textContent = words[i].text;
-    el.style.color = words[i].color;
-    el.style.textShadow = `0 0 40px ${words[i].color}55`;
-    el.classList.remove('word-slide-out');
-    void el.offsetWidth;
-    el.classList.add('word-slide-in');
-  }
-
-  function next(){
-    el.classList.remove('word-slide-in');
-    void el.offsetWidth;
-    el.classList.add('word-slide-out');
-    setTimeout(()=>{
-      idx = (idx+1) % words.length;
-      show(idx);
-    }, 460);
-  }
-
-  show(0);
-  setInterval(next, 1800);
-})();
-
-</script>
-</body>
-</html>
+</body></html>
